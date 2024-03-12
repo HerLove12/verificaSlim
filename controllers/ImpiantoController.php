@@ -173,7 +173,7 @@ class ImpiantoController{
 
     #----------------------------------------------------------------------------------------------------------------------------------------------
     
-    function rilevatoriDiPressione(Request $request, Response $response, $args){
+    function rilevatoriDiUmidita(Request $request, Response $response, $args){
         $impianto = new Impianto("impianto-1", "la423234", "lo4234534");
 
         $m1 = new Misurazione("1-marzo", "50");
@@ -181,13 +181,13 @@ class ImpiantoController{
 
         $misurazioni = array($m1, $m2);
 
-        $r1 = new RilevatoreDiPressione(true,"id-rilevatoreP-1", "soglia1", "codseriale1", $misurazioni);
-        $r2 = new RilevatoreDiPressione(False,"id-rilevatoreP-2", "soglia2", "codseriale2", $misurazioni);
+        $r1 = new RilevatoreDiUmidita(true,"id-rilevatoreU-1", "soglia1", "codseriale1", $misurazioni);
+        $r2 = new RilevatoreDiUmidita(False,"id-rilevatoreU-2", "soglia2", "codseriale2", $misurazioni);
 
-        $impianto->aggiungiRilevatorePressione($r1);
-        $impianto->aggiungiRilevatorePressione($r2);
+        $impianto->aggiungiRilevatoreUmidita($r1);
+        $impianto->aggiungiRilevatoreUmidita($r2);
 
-        $rilevatori = $impianto->getRilevatoriPressione();
+        $rilevatori = $impianto->getRilevatoriUmidita();
     
         foreach($rilevatori as $disp){
             $response->getBody()->write(json_encode($disp));
@@ -195,7 +195,7 @@ class ImpiantoController{
         return $response->withHeader('Content-Type', 'application/json');
     }
 
-    function rilevatoriDiPressioneById(Request $request, Response $response, $args){
+    function rilevatoriDiUmiditaById(Request $request, Response $response, $args){
         $impianto = new Impianto("impianto-1", "la423234", "lo4234534");
 
         $m1 = new Misurazione("1-marzo", "50");
@@ -203,13 +203,13 @@ class ImpiantoController{
 
         $misurazioni = array($m1, $m2);
 
-        $r1 = new RilevatoreDiPressione(true,"id-rilevatoreP-1", "soglia1", "codseriale1", $misurazioni);
-        $r2 = new RilevatoreDiPressione(False,"id-rilevatoreP-2", "soglia2", "codseriale2", $misurazioni);
+        $r1 = new RilevatoreDiUmidita(true,"id-rilevatoreU-1", "soglia1", "codseriale1", $misurazioni);
+        $r2 = new RilevatoreDiUmidita(False,"id-rilevatoreU-2", "soglia2", "codseriale2", $misurazioni);
 
-        $impianto->aggiungiRilevatorePressione($r1);
-        $impianto->aggiungiRilevatorePressione($r2);
+        $impianto->aggiungiRilevatoreUmidita($r1);
+        $impianto->aggiungiRilevatoreUmidita($r2);
 
-        $rilevatori = $impianto->getRilevatoriPressione();
+        $rilevatori = $impianto->getRilevatoriUmidita();
         $idx = $args['id'];
     
         foreach($rilevatori as $disp){
@@ -220,7 +220,7 @@ class ImpiantoController{
         return $response->withHeader('Content-Type', 'application/json');
     }
 
-    function rilevatoriDiPressioneByIdM(Request $request, Response $response, $args){
+    function rilevatoriDiUmiditaByIdM(Request $request, Response $response, $args){
         $impianto = new Impianto("impianto-1", "la423234", "lo4234534");
 
         $m1 = new Misurazione("1-marzo", "50");
@@ -228,13 +228,13 @@ class ImpiantoController{
 
         $misurazioni = array($m1, $m2);
 
-        $r1 = new RilevatoreDiPressione(true,"id-rilevatoreP-1", "soglia1", "codseriale1", $misurazioni);
-        $r2 = new RilevatoreDiPressione(False,"id-rilevatoreP-2", "soglia2", "codseriale2", $misurazioni);
+        $r1 = new RilevatoreDiUmidita(true,"id-rilevatoreU-1", "soglia1", "codseriale1", $misurazioni);
+        $r2 = new RilevatoreDiUmidita(False,"id-rilevatoreU-2", "soglia2", "codseriale2", $misurazioni);
 
-        $impianto->aggiungiRilevatorePressione($r1);
-        $impianto->aggiungiRilevatorePressione($r2);
+        $impianto->aggiungiRilevatoreUmidita($r1);
+        $impianto->aggiungiRilevatoreUmidita($r2);
 
-        $rilevatori = $impianto->getRilevatoriPressione();
+        $rilevatori = $impianto->getRilevatoriUmidita();
         $idx = $args['id'];
     
         foreach($rilevatori as $disp){
@@ -245,7 +245,7 @@ class ImpiantoController{
         return $response->withHeader('Content-Type', 'application/json');
     }
 
-    function rilevatoriDiPressioneByIdMM(Request $request, Response $response, $args){
+    function rilevatoriDiUmiditaByIdMM(Request $request, Response $response, $args){
         $impianto = new Impianto("impianto-1", "la423234", "lo4234534");
 
         $m1 = new Misurazione("1-marzo", "50");
@@ -253,13 +253,13 @@ class ImpiantoController{
 
         $misurazioni = array($m1, $m2);
 
-        $r1 = new RilevatoreDiPressione(true,"id-rilevatoreP-1", "soglia1", "codseriale1", $misurazioni);
-        $r2 = new RilevatoreDiPressione(False,"id-rilevatoreP-2", "soglia2", "codseriale2", $misurazioni);
+        $r1 = new RilevatoreDiUmidita(true,"id-rilevatoreP-1", "soglia1", "codseriale1", $misurazioni);
+        $r2 = new RilevatoreDiUmidita(False,"id-rilevatoreP-2", "soglia2", "codseriale2", $misurazioni);
 
-        $impianto->aggiungiRilevatorePressione($r1);
-        $impianto->aggiungiRilevatorePressione($r2);
+        $impianto->aggiungiRilevatoreUmidita($r1);
+        $impianto->aggiungiRilevatoreUmidita($r2);
 
-        $rilevatori = $impianto->getRilevatoriPressione();
+        $rilevatori = $impianto->getRilevatoriUmidita();
         $idx = $args['id'];
         $val = $args['val'];
     
